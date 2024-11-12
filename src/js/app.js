@@ -39,8 +39,10 @@ function render(variables = {}) {
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
           <h1>${showFullName ? fullName : namePlaceHolder}</h1>
-          <h2> ${variables.role}</h2>
-          <h3> ${variables.city + "," + " " + variables.country}</h3>
+          <h2> ${variables.role || "Select a role"}</h2>
+         <h3> ${variables.city || "City"}, ${variables.country ||
+    "Country"}</h3>
+
           <ul class=${variables.socialMediaPosition || right}>
             <li><a href="https://twitter.com/${
               variables.twitter
@@ -54,7 +56,7 @@ function render(variables = {}) {
             <li><a href="https://instagram.com/${
               variables.instagram
             }"><i class="fab fa-instagram"></i></a></li>
-          </ul>
+           </ul>
         </div>
     `;
 }
